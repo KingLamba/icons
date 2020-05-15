@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>bar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id="app">
+    <button v-on:click="plus5" >+5</button>
+    <button v-on:click="minus5">-5</button>
+
+      <div class="progress">
+  <div class="progress-bar" role="progressbar" v-bind:aria-valuenow="score" aria-valuemin="0" aria-valuemax="100" style="width:500px">
+  {{this.score}}
+  </div>
+</div>
+      </div>
+    
+
+<script>
+    
+    new Vue({
+      el: '#app',
+      data: {
+        score: 0
+      },
+     
+      methods:{
+          plus5:function(){
+              this.score+=5;
+              
+              if ( this.score > 100) this.score=100
+              
+          },
+          minus5:function(){
+              this.score-=5;
+              if (this.score < 0) this.score =0
+          },
+
+          
+      },
+      mounted:function(){
+         this.score()
+         
+    }
+        
+    });
+    </script>
+</body>
+</html>
+
+
+</html>
